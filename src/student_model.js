@@ -79,7 +79,7 @@ studentSchema.methods.toJSON = function() {
             middleName : student.name.middleName,
             lastName: student.name.lastName
         },
-        dateOfBirth: (student.dateOfBirth ? student.dateOfBirth.toLocaleDateString('IST') : undefined),
+        dateOfBirth: (student.dateOfBirth ? student.dateOfBirth.toLocaleDateString('en-US') : undefined),
         age : (student.dateOfBirth ? 
             (new Date(Date.now()).getFullYear() - student.dateOfBirth.getFullYear()) : undefined ),
         email: student.email,

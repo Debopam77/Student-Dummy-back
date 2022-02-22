@@ -6,16 +6,14 @@ const app = express.Router()
 //Login router
 app.post('/student/login', async(req, res)=> {
     try {
-        console.log(req.body)
         const student = await Student.findOne({registration : req.body.registration})
-        console.log(student)
         if(req.body.password === student.password) 
             res.send(student)
         else {
             res.status(400).send('Invalid Registration or password')
         }    
     }catch(e) {
-        res.status(500).send(e)
+        res.status(500).send('Invalid Registration or password')
     }
 })
 
